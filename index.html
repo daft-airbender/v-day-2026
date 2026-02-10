@@ -68,6 +68,12 @@
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
     .hidden {
       display: none;
     }
@@ -108,7 +114,7 @@
     <img id="mainGif" style="margin-bottom: 100px;" src="./hello-kitty-kiss.gif" alt="Hello Kitty Kiss">
     
     <div id="buttons">
-      <button onclick="handleNo()">No</button>
+      <button id="noButton" onclick="handleNo()">No</button>
       <button onclick="handleYes()">Yes</button>
     </div>
 
@@ -116,6 +122,21 @@
   </div>
 
   <script>
+    const noResponses = [
+      "What?!",
+      "Wrong button!",
+      "r u sure?",
+      "Try again!",
+      "Really?",
+      "This can't be!",
+      "Say it ain't so!!!",
+      "😓",
+      "PLEASE BUBBY.",
+      "⬇️"
+    ];
+    
+    let noClickCount = 0;
+
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -148,7 +169,17 @@
     }
 
     function handleNo() {
-      // alert('Are you sure? 🥺');
+      const noButton = document.getElementById('noButton');
+      
+      if (noClickCount < noResponses.length) {
+        noButton.textContent = noResponses[noClickCount];
+        noClickCount++;
+        
+        // Disable after 10 clicks
+        if (noClickCount >= noResponses.length) {
+          noButton.disabled = true;
+        }
+      }
     }
   </script>
 </body>
