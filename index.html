@@ -38,6 +38,30 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
       font-size: 1.5rem;
     }
+    
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 15px 40px;
+      width: 200px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 2px solid white;
+      border-radius: 10px;
+      cursor: pointer;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+    
+    button:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    button:active {
+      transform: scale(0.95);
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -46,6 +70,13 @@
     <h2>It's me, Teddy.</h2>
     <p style="margin-top: 20vh;">So, I have an <u>urgent question</u> that I need to ask you.</p>
     <p style="margin-top: 20vh;"><i>Scroll down to see what it is!</i></p>
+    
+    <h2 style="margin-top: 120vh;">Will You...</h2>
+    <h2>Be My Valentine's ?</h2>
+    <img style="margin-bottom: 100px;" src="./hello-kitty-kiss.gif" alt="Hello Kitty Kiss">
+    
+    <button>No</button>
+    <button>Yes</button>
   </div>
 </body>
 </html>
